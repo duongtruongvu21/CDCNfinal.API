@@ -16,6 +16,8 @@ namespace CDCNfinal.API.Data.Entities
         
         [MaxLength(256)]
         public string BrandName { get; set; }
+
+        public string ImageUrl { get; set; }
         
         public string Decription { get; set; }
         
