@@ -88,5 +88,11 @@ namespace Namespace
 
             return Ok(JsonConvert.SerializeObject(response));
         }
+
+        [HttpGet("JenkinsCICD")]
+        public IActionResult JenkinsCICD()
+        {
+            return Ok("TestCICD 21h30 27/11");
+        }
     }
 }
