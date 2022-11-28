@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using AutoMapper;
 using CDCNfinal.API.Data;
 using CDCNfinal.API.Data.DTOs;
@@ -56,6 +52,7 @@ namespace CDCNfinal.API.Services.ProductServices.cs
             if(product == null) return null;
             Product.ProductName = product.ProductName;
             Product.BrandName = product.BrandName;
+            Product.ImageUrl = product.ImageUrl;
             Product.Decription = product.Decription;
             Product.Price  = product.Price;
             return _mapper.Map<Product, ProductDetailDTO>(Product);
