@@ -92,7 +92,7 @@ namespace Namespace
         [HttpGet("JenkinsCICD")]
         public IActionResult JenkinsCICD()
         {
-            return Ok("TestCICD 21h30 27/11 28");
+            return Ok("TestCICD 21h30 27/11 28/11");
         }
     }
 }
