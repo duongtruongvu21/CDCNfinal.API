@@ -1,6 +1,7 @@
 using System.Reflection;
+using CDCFinal.API.Mapping;
+using CDCFinal.API.Services.OrderService.cs;
 using CDCNfinal.API.Data;
-using CDCNfinal.API.Mapping;
 using CDCNfinal.API.Services._AuthServices;
 using CDCNfinal.API.Services.ProductServices.cs;
 using Microsoft.EntityFrameworkCore;
@@ -46,6 +47,7 @@ services.AddDbContext<DataContext>(
 
 services.AddScoped<IAuthService, AuthService>();
 services.AddScoped<IProductService, ProductService>();
+services.AddScoped<IOrderService, OrderService>();
 services.AddAutoMapper(typeof(AutoMappingConfiguration).Assembly);
 
 var app = builder.Build();
