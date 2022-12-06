@@ -14,9 +14,9 @@ namespace CDCNfinal.API.Services.ProductServices.cs
 
         bool SaveChanges();
 
-        void CreateProduct(ProductAddDTO productAddDTO);
+        Task<bool> CreateProduct(ProductAddDTO productAddDTO);
 
-        ProductDetailDTO UpdateProduct(ProductDetailDTO product);
+        Task<bool> UpdateProduct(int id,ProductAddDTO product);
 
         void DeleteProduct(int Id);
     }

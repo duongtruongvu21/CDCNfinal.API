@@ -39,6 +39,7 @@ services.AddDbContext<DataContext>(
 
 services.AddScoped<IAuthService, AuthService>();
 services.AddScoped<IProductService, ProductService>();
+services.AddScoped<IUploadImgService, UploadImgService>();
 services.AddAutoMapper(typeof(AutoMappingConfiguration).Assembly);
 
 var app = builder.Build();

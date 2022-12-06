@@ -34,21 +34,30 @@ namespace CDCNfinal.API.Controllers
         }
 
         [HttpPost]
-        public ActionResult Post(ProductAddDTO productAddDTO)
+        public async Task<ActionResult<string>> Post([FromForm]  ProductAddDTO productAddDTO)
         {
-            _productService.CreateProduct(productAddDTO);
-            if(_productService.SaveChanges()) return NoContent();
+            try{
+                if(await _productService.CreateProduct(productAddDTO)) return NoContent();
+            }
+            catch(Exception ex){
+                return BadRequest(ex.Message);
+            }
             return BadRequest();
         }
 
         [HttpPut("{id}")]
-        public ActionResult Put(ProductDetailDTO product)
+        public async Task<ActionResult<string>> Put(int id,[FromForm] ProductAddDTO product)
         {
-            if(_productService.GetProductById(product.Id) == null){
-                return NotFound("Product is invalid");
+
+            try{
+                if(await _productService.UpdateProduct(id,product)){
+                    var result = _productService.GetProductById(id);
+                    return Ok(result);
+                }
             }
-            _productService.UpdateProduct(product);
-            if(_productService.SaveChanges()) return NoContent();
+            catch(Exception ex){
+                return BadRequest(ex.Message);
+            }
             return BadRequest();
         }
 

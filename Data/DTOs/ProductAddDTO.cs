@@ -13,7 +13,7 @@ namespace CDCNfinal.API.Data.DTOs
         
         public string Decription { get; set; }
 
-        public string ImageUrl { get; set; }
+        public IFormFile? Image { get; set; }
         
         public decimal Price { get; set; }
     }
